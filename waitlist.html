@@ -1,44 +1,106 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Waitlist - Your Product Name</title>
+    <title>Join Waitlist</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-
-    <div class="min-h-screen bg-base-200 flex items-center justify-center">
-        <div class="card bg-base-100 shadow-xl max-w-md w-full m-4">
+<body class="bg-base-200">
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="card bg-base-100 shadow-xl w-full max-w-md">
             <div class="card-body">
-                <h2 class="card-title text-2xl font-bold text-center mb-6">Join Our Waitlist</h2>
-                <form id="waitlistForm" action="thank-you.html" class="space-y-4">
+                <h2 class="card-title text-2xl font-bold mb-6">Join Our Waitlist</h2>
+                
+                <form id="waitlistForm" class="space-y-4">
+                    <!-- First Name -->
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text">Name</span>
+                            <span class="label-text">First Name</span>
                         </label>
-                        <input type="text" placeholder="Your name" class="input input-bordered" required />
+                        <input 
+                            type="text" 
+                            id="firstName" 
+                            name="firstName"
+                            placeholder="Enter your first name" 
+                            class="input input-bordered w-full" 
+                            required
+                        />
                     </div>
-                    
+
+                    <!-- Last Name -->
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text">Email</span>
+                            <span class="label-text">Last Name</span>
                         </label>
-                        <input type="email" placeholder="your@email.com" class="input input-bordered" required />
+                        <input 
+                            type="text" 
+                            id="lastName" 
+                            name="lastName"
+                            placeholder="Enter your last name" 
+                            class="input input-bordered w-full" 
+                            required
+                        />
                     </div>
+
+                    <!-- Email Address -->
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Email Address</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email"
+                            placeholder="your@email.com" 
+                            class="input input-bordered w-full" 
+                            required
+                        />
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Phone Number</span>
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone"
+                            placeholder="Enter your phone number" 
+                            class="input input-bordered w-full" 
+                            required
+                        />
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Comments</span>
+                        </label>
+                        <textarea 
+                            id="comments" 
+                            name="comments"
+                            placeholder="Any additional comments?" 
+                            class="textarea textarea-bordered h-24"
+                        ></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
                     <div class="form-control mt-6">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary w-full">Join Waitlist</button>
                     </div>
                 </form>
+
+                <!-- Back to Home Link -->
                 <div class="text-center mt-4">
                     <a href="index.html" class="link link-primary">Back to Home</a>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="js/main.js"></script>
 </body>
 </html>
