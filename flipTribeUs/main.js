@@ -20,7 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
             currentStep--;
             showStep(currentStep);
         });
-    });
+    document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Handle form data here
+    window.location.href = 'thank-you.html';
+});});
     
     // Handle form submission
     const form = document.getElementById('form');
