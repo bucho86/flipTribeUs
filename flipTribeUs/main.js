@@ -20,11 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             currentStep--;
             showStep(currentStep);
         });
-    document.getElementById('waitlistForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Handle form data here
-    window.location.href = 'thank-you.html';
-});});
+    });
     
     // Handle form submission
     const form = document.getElementById('form');
@@ -44,6 +40,13 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'thank-you.html';
     });
 });
+function handleSubmit(event) {
+    event.preventDefault();
+    // Store form data or process it as needed
+    window.location.href = 'thank-you.html';
+}
+
+
 
 function showStep(step) {
     // Hide all steps
