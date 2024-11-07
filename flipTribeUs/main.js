@@ -1,24 +1,55 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+// Simple form handling with steps
+let currentStep = 1;
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+document.addEventListener('DOMContentLoaded', function() {
+    showStep(1); // Show first step initially
+    
+    // Handle Next button clicks
+    const nextButtons = document.querySelectorAll('.next-btn');
+    nextButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            currentStep++;
+            showStep(currentStep);
+        });
+    });
+    
+    // Handle Back button clicks
+    const backButtons = document.querySelectorAll('.back-btn');
+    backButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            currentStep--;
+            showStep(currentStep);
+        });
+    });
+    
+    // Handle form submission
+    const form = document.getElementById('form');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-setupCounter(document.querySelector('#counter'))
+        // Get all form data
+        const formData = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            comments: document.getElementById('comments').value
+        };
+        console.log('Form submitted:', formData);        
+        // Redirect to thank you page
+        window.location.href = 'thank-you.html';
+    });
+});
+
+function showStep(step) {
+    // Hide all steps
+    document.querySelectorAll('.step').forEach(step => {
+        step.style.display = 'none';
+    });
+    
+    // Show current step
+    const currentStep = document.getElementById(`step${step}`);
+    if (currentStep) {
+        currentStep.style.display = 'block';
+    }
+}
